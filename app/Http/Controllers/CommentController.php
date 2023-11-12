@@ -18,7 +18,6 @@ class CommentController extends Controller
 
     public function store(CommentRequestCreate $request, $article)
     {
-        // Validate the request data if needed
         $data = [
             'article_id' => $article,
             'content' => $request->content,

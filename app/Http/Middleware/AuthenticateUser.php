@@ -20,7 +20,6 @@ class AuthenticateUser
             return $next($request); // User is authenticated, continue with the request.
         }
 
-        // User is not authenticated, you can customize the response here.
         return redirect()->route('login'); // Redirect to the login page.
     }
 }

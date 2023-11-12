@@ -30,13 +30,11 @@ class SendNewArticleNotification implements ShouldQueue
 
     public function handle()
     {
-        // Send the new article notification to administrators
         Notification::send($this->getAdmins(), new NewArticleNotification($this->article));
     }
 
     protected function getAdmins()
     {
-        // Logic to retrieve the administrators (users or recipients) who should receive the notification
         return User::admins()->get();
     }
 }

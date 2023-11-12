@@ -21,11 +21,11 @@ class CommentRepository implements CommentRepositoryInterface
     public function deleteComment(Comment $comment)
     {
         if ($comment->user_id !== Auth::user()->id) {
-            return false; // You can return a status or throw an exception
+            return false;
         }
 
         $comment->delete();
 
-        return true; // You can return a status or throw an exception
+        return true;
     }
 }

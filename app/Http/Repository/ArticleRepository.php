@@ -48,8 +48,7 @@ class ArticleRepository implements ArticleRepositoryInterface
     }
 
     public function cachedOrFind($id){
-        $articles = Cache::get('articles'); // Replace 'article_key' with the actual key you used to cache the article
-
+        $articles = Cache::get('articles');
         if ($articles[$id]) {
             $article = $articles[$id];
         } else {
@@ -127,7 +126,7 @@ class ArticleRepository implements ArticleRepositoryInterface
 
     public function popularArticles()
     {
-        $articles = Cache::get('articles'); // Replace 'article_key' with the actual key you used to cache the article
+        $articles = Cache::get('articles');
 
         if(!$articles) {
             $articles = Article::orderBy('views', 'desc')->take(10)->get();

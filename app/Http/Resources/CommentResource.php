@@ -20,7 +20,6 @@ class CommentResource extends JsonResource
             'user' => new UserResource($this->user), // Use UserResource to format user data
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            // Add more comment attributes as needed
         ];
     }
 }

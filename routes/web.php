@@ -19,7 +19,6 @@ use App\Http\Controllers\ArticleController;
 Auth::routes();
 
 Route::middleware(['auth.user'])->group(function () {
-    // Routes that require the 'auth.user' middleware go here
     Route::get('/myArticle', [ArticleController::class, 'myArticle'])->name('articles.myArticle');
     Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
     Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store');
@@ -31,7 +30,6 @@ Route::middleware(['auth.user'])->group(function () {
     Route::delete('/comments/{comment}/destroy', [CommentController::class, 'destroy'])->name('comments.destroy');
 });
 
-// Routes that don't require the 'auth.user' middleware go here
 Route::get('/', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('admin/articles', [ArticleController::class, 'article'])->name('articles.articles');
 Route::get('articles/search', [ArticleController::class, 'search'])->name('articles.search');
